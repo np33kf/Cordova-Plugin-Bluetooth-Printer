@@ -256,10 +256,12 @@ public class BluetoothPrinter extends CordovaPlugin {
 
 	//This will send data to bluetooth printer
 	boolean printText(CallbackContext callbackContext, String msg) throws IOException {
+		String teste="";
 		try {
-			byte[] input = msg.getBytes();			
+			byte[] input = msg.getBytes();
+		
 			for (int i = 0; i < input.length; i++) {
-				if (input[i]>127) {alert(input[i]);};
+				if (input[i]>127) {teste+=(input[i])+"+";};
   				if (input[i]==194) {input[i]=0;};
 			}
 			

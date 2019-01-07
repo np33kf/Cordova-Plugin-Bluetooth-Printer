@@ -259,8 +259,8 @@ public class BluetoothPrinter extends CordovaPlugin {
 		try {
 			byte[] input = msg.getBytes();			
 			for (int i = 0; i < input.length; i++) {
-				console.log(input[i]);
-  				if (input[i]==194) {input[i]=0;}
+				if (input[i]>127) {alert(input[i]);};
+  				if (input[i]==194) {input[i]=0;};
 			}
 			
 			mmOutputStream.write(input);

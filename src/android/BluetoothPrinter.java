@@ -269,14 +269,14 @@ public class BluetoothPrinter extends CordovaPlugin {
 
 			// tell the user data were sent
 			//Log.d(LOG_TAG, "Data Sent");
-			callbackContext.success("Data Sent");
+			callbackContext.success("Data Sent"+teste);
 			return true;
 
 		} catch (Exception e) {
 			String errMsg = e.getMessage();
 			Log.e(LOG_TAG, errMsg);
 			e.printStackTrace();
-			callbackContext.error(errMsg);
+			callbackContext.error(errMsg+teste);
 		}
 		return false;
 	}
